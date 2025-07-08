@@ -1,0 +1,244 @@
+:root {
+    --color-bg: #e0e0e0;
+    --color-text: #242323;
+    --color-text-links: #6e6e6e;
+    --color-accent: #3a5a40;
+    --color-accent-hover: #7CB342;
+
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    --font-elegant: 'Crimson Text', serif;
+    --max-width: 1470px;
+}
+
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+
+body{
+    background: url(/assets/images/res-7.jpg) center/cover no-repeat;
+    min-height: 100vh;
+
+}
+
+
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    max-width: var(--max-width);
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
+}
+
+.logo {
+    font-family: var(--font-elegant);
+    font-size: clamp(1.7rem, 2vw + .5rem, 2.5rem);
+    color: var(--color-accent);
+    font-weight: 400;
+    letter-spacing: 1px;
+   
+}
+
+.navlinks {
+    display: flex;
+    gap: 80px;
+}
+
+.navlinks li a {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--color-text-links);
+    transition: color .5s ease;
+}
+
+.navlinks li a:hover {
+    color: var(--color-accent);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.burger span {
+    width: 25px;
+    height: 3px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    transition: all .4s ease;
+    transform-origin: center;
+}
+
+.nav.active .burger span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 6.5px);
+}
+
+.nav.active .burger span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav.active .burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -5px);
+}
+
+.hero {
+
+}
+
+
+
+.faq-intro {
+    max-width: 600px;
+    margin: 40px auto 20px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+
+/* Form Container */
+.form-container {
+    background-color: rgba(255, 255, 255, .5);
+    width: 90%;
+    max-width: 600px;
+    height: auto; 
+    border: 2px solid;
+    border-radius: 30px;
+    margin:  auto;
+    padding: 40px 20px;
+    margin-top: 500px;
+}
+
+label {
+    display: block;
+    color: #000;
+}
+
+
+input {
+    width: 100%; 
+    height: 60px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    font-size: 15px;
+    outline: none;
+    font-size: 16px;
+    font-weight: 400;
+
+}
+
+textarea {
+    width: 100%; 
+    height: 200px;
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    outline: none;
+}
+
+button {
+    font-weight: bold;
+    display: block;
+    margin: 40px auto;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: none;
+    background-color: transparent;
+    transition: all .3s ease;
+}
+
+button:hover {
+    background-color: var(--color-accent-hover);
+    border: 1px solid #242323;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(3px);
+}
+
+
+
+/* Small devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .nav{
+        padding: 20px;
+    }
+    .navlinks {
+        flex-direction: column;
+        gap: 20px;
+        background: rgba(0, 0, 0, .7);
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        padding: 30px 20px;
+        display: none;
+        align-items: center;
+        transition: transform .3s ease, opacity .3s ease;
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    
+
+    .nav.active .navlinks {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    } 
+
+        .burger {
+        display: flex;
+    }
+
+    .form-container {
+        padding: 20px; 
+    }
+
+    input, textarea {
+        font-size: 14px; 
+    }
+
+    button {
+        padding: 7px 15px; 
+        font-size: 14px;
+    }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px; 
+    }
+
+    .navbar li a {
+        font-size: 13px; 
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+}
+
