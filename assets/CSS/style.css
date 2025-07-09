@@ -378,7 +378,7 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 50px;
+    padding: 40px 20px;
 }
 
 .menu-text {
@@ -398,77 +398,65 @@ header {
     margin-bottom: 20px;
 }
 
-.menu-container {
+.menu-container { 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    padding: 40px 20px;
 }
 
 .menu-box {
     position: relative;
-    height: 400px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, .3);
-    transition: transform .3s ease;
     cursor: pointer;
 }
 
-.menu-box:hover{
-    transform: translateY(-10px);
-}
 
 .menu-box img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    display: block;
+    border-radius: 10px;
     transition: transform .3s ease;
+}
+
+.box-overlay {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
+    border-radius: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    padding:  0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height .5s;
+    backdrop-filter: blur(10px);
 }
 
 .menu-box:hover img {
     transform: scale(1.05);
 }
 
-
-.box-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.3));
-    color: #fff;
-    padding: 20px;
-    transform: translateY(100%);
-    transition: transform .4s cubic-bezier(.4, 0, .2, 1);
-    backdrop-filter: blur(10px);
-}
-
 .menu-box:hover .box-overlay {
-    transform: translateY(0);
+    height: 60%;
 }
 
 .box-overlay h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.4em;
-    font-weight: 600;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity .3s ease .2s, transform .3s ease .2s;
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .box-overlay p {
-    margin: 0;
-    font-size: .95em;
-    line-height: 1.6;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity .3s ease, transform .3s ease .3s;
-}
-
-.menu-box:hover .box-overlay h3,
-.menu-box:hover .box-overlay p{
-    opacity: 1;
-    transform: translateY(0);
+    font-weight: 300;
 }
 
 
