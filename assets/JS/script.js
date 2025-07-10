@@ -61,9 +61,11 @@ slider.addEventListener('mouseleave', () => {
 updateActiveDot();
 
 
+const aboutImage = document.getElementById('about-image');
+const aboutText = document.getElementById('about-text');
+
 
 document.addEventListener("DOMContentLoaded", function () {
-   const aboutImage = document.getElementById('about-image');
    const observer = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
          if (entry.isIntersecting) {
@@ -76,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-   const aboutText = document.getElementById('about-text');
    const observer = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
          if (entry.isIntersecting) {
