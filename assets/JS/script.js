@@ -8,7 +8,8 @@ const totalSlides = slides.length;
 const slider = document.querySelector('.slider');
 const navDots = document.querySelectorAll('.slider-nav a');
 
-
+// Accordion
+const headers = document.querySelectorAll('.accordion-header');
 
 
 burger.addEventListener('click', () => {
@@ -90,4 +91,13 @@ document.addEventListener("DOMContentLoaded", function () {
    observer.observe(aboutText);
 });
 
-
+headers.forEach(header => {
+   header.addEventListener('click', () => {
+      headers.forEach(otherHeader => {
+         if(otherHeader !== header) {
+            otherHeader.classList.remove('active');
+         }
+      });
+      header.classList.toggle('active');
+   });
+});

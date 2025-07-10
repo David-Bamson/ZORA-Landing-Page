@@ -19,10 +19,6 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-app.get('/faq', (req, res) => {
-    res.render('Faq', {title: 'ZORA | contact us'});
-});
-
 app.post('/submit-form', (req, res) => {
     const {name, email, message} = req.body;
 
