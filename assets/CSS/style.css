@@ -900,24 +900,6 @@ header {
 }
 
 
-.footer {
-    font-size: 20px;
-    font-weight: 400;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    letter-spacing: 1;
-}
-
-.footer span {
-    font-family: var(--font-elegant);
-    font-weight: 500;
-    color: var(--color-accent);
-    letter-spacing: .5;
-
-}
-
-
 @media (min-width: 769px) and (max-width: 1300px) {
     .nav {
         padding: 25px;
